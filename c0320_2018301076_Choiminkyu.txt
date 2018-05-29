@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+	int x,y;
+	int z;
+	int time;
+	int all;
+
+	printf("일한 시간(시,분)과 급여를 입력하시오.\n");
+	
+	printf("시:");
+	scanf("%d",&x);
+
+	printf("분:");
+	scanf("%d",&y);
+
+	printf("급여:");
+	scanf("%d",&z);
+
+	time=60*x+y;
+	printf("일한 시간은 %d분입니다.\n",time);
+
+	all=z/time;
+	printf("1분당 급여는 %d원입니다.\n",all);
+
+	return 0;
+
+}

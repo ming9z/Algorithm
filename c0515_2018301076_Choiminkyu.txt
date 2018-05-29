@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int random(int lower, int upper);
+
+int main()
+{
+	int i;
+	int n;
+	int r1 = 0;
+	int r2 = 0;
+	int r3 = 0;
+	int r4 = 0;
+	int r5 = 0;
+	int r6 = 0;
+
+
+	srand((unsigned)time(0));
+
+	printf("주사위 던질 횟수:");
+	scanf("%d", &n);
+
+	for (i = 0; i<n; i++) {
+		int a= random(1, 6);
+		if (a == 1) {
+			r1++;
+		}
+		else if (a == 2) {
+			r2++;
+		}
+		else if (a == 3) {
+			r3++;
+		}
+		else if (a == 4) {
+			r4++;
+		}
+		else if (a == 5) {
+			r5++;
+		}
+		else if (a == 6) {
+			r6++;
+		}
+	}
+
+	printf("1 이 나온횟수 : %d\n", r1);
+	printf("2 이 나온횟수 : %d\n", r2);
+	printf("3 이 나온횟수 : %d\n", r3);
+	printf("4 이 나온횟수 : %d\n", r4);
+	printf("5 이 나온횟수 : %d\n", r5);
+	printf("6 이 나온횟수 : %d\n", r6);
+
+	return 0;
+
+}
+
+int random(int lower, int upper)
+{
+	int n = (rand() % upper) + lower;
+	return n;
+
+}

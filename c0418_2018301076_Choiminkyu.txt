@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	int answer;
+	int guess;
+	int tries=1;
+	int x,y; // x하한값 y상한값
+
+	srand((unsigned int) time(0));
+	
+	printf("난수 하한값 입력:");
+	scanf("%d",&x);
+
+	do
+	{
+		printf("난수 상한값 입력 (%d보다 작지 않은 수):",x);
+		scanf("%d",&y);
+
+	}while(x>y);
+
+	answer=rand()%(y-x+1)+x;
+
+
+	///////////////////////////////////////////////////////////
+
+	do
+	{
+		printf("%d번째 시도, %d~%d 사이 추측값 입력:",tries,x,y);
+		scanf("%d",&guess);
+
+		if(guess>=x && guess<=y){
+			tries++;
+
+			if(guess>answer){
+				printf("정답은 %d보다 작습니다.\n",guess);
+			}
+
+			else if(guess<answer){
+				printf("정답은 %d보다 큽니다.\n",guess);
+			}
+
+		}
+
+		else if(guess<=x && guess>=y){
+			printf("%d번째 시도, %d~%d 사이 추측값 입력:",tries,x,y);
+		}
+
+}	while(guess!=answer);
+
+	printf("축하합니다. 정답은 %d입니다.\n",answer);
+
+	return 0;
+}

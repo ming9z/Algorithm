@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int time; //시간
+	int fam; //가족구성원
+	int i; //반복
+	int age; //나이
+	int sum=0; //합계
+	int x,y,z; //돈 
+
+	printf("현재시간 입력(0~23시):");
+	scanf("%d",&time);
+
+	printf("가족 인원 수 입력:");
+	scanf("%d",&fam);
+
+	x=25000;
+	y=34000;
+	z=10000;
+
+
+	for(i=1; i<=fam; i++){
+
+		printf("%d번째 사람 나이 입력:",i);
+		scanf("%d",&age);
+
+		if(age<3){
+			printf("무료입니다.\n");
+		}
+
+
+		else if(time<17){
+
+			if(age>=3 && age<=12 || age>=65){
+				printf("요금은 %d원입니다.\n",x);
+				sum=sum+x;}
+
+			else {
+				printf("요금은 %d원입니다.\n",y);
+				sum=sum+y;
+			}
+
+		}
+
+
+		else{
+			printf("요금은 %d원입니다.\n",z);
+			sum=sum+z;
+
+		}
+
+	}
+
+	printf("가족의 요금은 %d입니다\n",sum);
+
+	return 0;
+}
