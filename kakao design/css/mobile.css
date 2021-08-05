@@ -1,0 +1,15 @@
+@media screen and (min-width: 3200px) {
+  .bigScreenText {
+    display: flex;
+  }
+}
+/* @media screen and (min-width: 530px) and (orientation: landscape) {
+  .bigScreenText {
+    display: flex;
+  }
+} */
+/* @media screen and (min-width: 530px) and (orientation: portrait) {
+  .bigScreenText {
+    display: flex;
+  }
+} */
